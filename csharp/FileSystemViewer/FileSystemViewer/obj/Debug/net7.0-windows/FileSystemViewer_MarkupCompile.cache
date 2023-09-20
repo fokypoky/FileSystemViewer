@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\App.xaml
-11407045341
+1-1116360770
 
-3-1233169557
+71210867865
 198947991364
-MainWindow.xaml;
+Views\Windows\MainWIndow.xaml;
 
-True
+False
 
