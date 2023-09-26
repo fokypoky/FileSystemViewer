@@ -4,9 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileSystemViewer.Views.Windows"
+        xmlns:vmodel="clr-namespace:FileSystemViewer.ViewModels"
         mc:Ignorable="d"
         Title="File system viewer" Height="450" Width="800">
+
+    <Window.DataContext>
+        <vmodel:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <TabControl>
+
+            <TabItem Header="DISKS">
+                <Frame Content="{Binding DisksUserControl}"/>
+            </TabItem>
+
+            <TabItem Header="JSON">
+                <Frame Content="{Binding JsonUserControl}"/>
+            </TabItem>
+
+            <TabItem Header="XML">
+                <Frame Content="{Binding XmlUserControl}"/>
+            </TabItem>
+
+            <TabItem Header="ZIP">
+                <Frame Content="{Binding ZipUserControl}"/>
+            </TabItem>
+
+        </TabControl>
     </Grid>
 </Window>
