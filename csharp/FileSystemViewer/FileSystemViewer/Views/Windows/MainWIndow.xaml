@@ -25,12 +25,8 @@
                 <Frame Content="{Binding DisksUserControl}"/>
             </TabItem>
 
-            <TabItem Header="JSON">
-                <Frame Content="{Binding JsonUserControl}"/>
-            </TabItem>
-
-            <TabItem Header="XML">
-                <Frame Content="{Binding XmlUserControl}"/>
+            <TabItem Header="FILE">
+                <Frame Content="{Binding FileUserControl}"/>
             </TabItem>
 
             <TabItem Header="ZIP">

@@ -11,9 +11,9 @@ namespace FileSystemViewer.ViewModels
 			get => new DisksUserControl();
 		}
 
-		public UserControl JsonUserControl
+		public UserControl FileUserControl
 		{
-			get => new JsonUserControl();
+			get => new FileUserControl();
 		}
 
 		public UserControl XmlUserControl

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\App.xaml
-1-1116360770
+5-1307699338
 
-71210867865
+26-997624519
 198947991364
-Views\Windows\MainWIndow.xaml;
+Views\UserControls\DisksUserControl.xaml;Views\UserControls\FileUserControl.xaml;Views\UserControls\XmlUserControl.xaml;Views\UserControls\ZipUserControl.xaml;Views\Windows\MainWIndow.xaml;
 
-False
+True
 

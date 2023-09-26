@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="FileSystemViewer.Views.UserControls.FileUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FileSystemViewer.Views.UserControls"
+             xmlns:vmodel="clr-namespace:FileSystemViewer.ViewModels.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:Background="White">
+
+    <UserControl.DataContext>
+        <vmodel:FileUserControlViewModel/>
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <Style x:Key="ContactsEditingTextBlockStyle">
+            <Setter Property="TextBlock.HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextBlock.FontSize" Value="15"/>
+            <Setter Property="TextBlock.Margin" Value="0,0,0,3"/>
+        </Style>
+        <Style x:Key="ContactsEditingTextBoxStyle">
+            <Setter Property="TextBox.BorderThickness" Value="0"/>
+            <Setter Property="TextBox.Background" Value="Lavender"/>
+            <Setter Property="TextBox.Margin" Value="3,0,3,0"/>
+            <Setter Property="TextBox.MinHeight" Value="20"/>
+            <Setter Property="TextBox.FontSize" Value="15"/>
+        </Style>
+        <Style x:Key="ContactsActionButtonStyle">
+            <Setter Property="Button.Margin" Value="3"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+              Background="White">
+           <MenuItem Header="File">
+               <MenuItem Header="New"/>
+               <MenuItem Header="Open" Command="{Binding OpenPhoneBookCommand}"/>
+               <MenuItem Header="Save as">
+                   <MenuItem Header="JSON" Command="{Binding SavePhoneBookCommand}"
+                             CommandParameter="json"/>
+                   <MenuItem Header="XML" Command="{Binding SavePhoneBookCommand}"
+                             CommandParameter="xml"/>
+               </MenuItem>
+           </MenuItem>
+        </Menu>
+
+        <DataGrid Grid.Row="1" Grid.Column="0" Background="White" 
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False" SelectionMode="Extended"
+                  Margin="3"
+                  ItemsSource="{Binding Contacts}"
+                  SelectedItem="{Binding SelectedContacts}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Phone number" Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Border Grid.Row="1" Grid.Column="1" Margin="3"
+                BorderBrush="Black" BorderThickness="0.5">
+            <StackPanel>
+                <TextBlock Text="Name" Style="{StaticResource ContactsEditingTextBlockStyle}"/>
+                <TextBox Style="{StaticResource ContactsEditingTextBoxStyle}"
+                         Text="{Binding SelectedContacts.Name,
+                    UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="Phone number" Style="{StaticResource ContactsEditingTextBlockStyle}"/>
+                <TextBox Style="{StaticResource ContactsEditingTextBoxStyle}"
+                         Text="{Binding SelectedContacts.PhoneNumber, 
+                    UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="Email" Style="{StaticResource ContactsEditingTextBlockStyle}"/>
+                <TextBox Style="{StaticResource ContactsEditingTextBoxStyle}"
+                         Text="{Binding SelectedContacts.Email,
+                    UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="Address" Style="{StaticResource ContactsEditingTextBlockStyle}"/>
+                <TextBox Style="{StaticResource ContactsEditingTextBoxStyle}"
+                         Text="{Binding SelectedContacts.Address,
+                    UpdateSourceTrigger=PropertyChanged}"/>
+
+            </StackPanel>
+        </Border>
+        
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Style="{StaticResource ContactsActionButtonStyle}"
+                    Content="+"
+                    Command="{Binding AddContactsCommand}"/>
+            <Button Grid.Column="1" Style="{StaticResource ContactsActionButtonStyle}"
+                    Content="-"
+                    Command="{Binding RemoveContactsCommand}"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
