@@ -14,6 +14,14 @@
     </UserControl.DataContext>
 
     <Grid>
-        <TextBlock Text="DISKS" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DataGrid Background="White" ItemsSource="{Binding Disks}"
+                  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Disk name" Binding="{Binding DiskName}"/>
+                <DataGridTextColumn Header="TotalSize" Binding="{Binding TotalSize}"/>
+                <DataGridTextColumn Header="Free space" Binding="{Binding FreeSpace}"/>
+                <DataGridTextColumn Header="Used Space" Binding="{Binding UsedSpace}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>
