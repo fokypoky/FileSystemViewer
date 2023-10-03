@@ -19,11 +19,9 @@ C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\Fi
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\FileSystemViewer.genruntimeconfig.cache
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\ref\FileSystemViewer.dll
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\DisksUserControl.g.cs
-C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\XmlUserControl.g.cs
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\ZipUserControl.g.cs
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\DisksUserControl.baml
-C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\XmlUserControl.baml
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\ZipUserControl.baml
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\FileUserControl.g.cs
 C:\Users\fokypoky\Documents\Projects\FileSystemViewer\csharp\FileSystemViewer\FileSystemViewer\obj\Debug\net7.0-windows\Views\UserControls\FileUserControl.baml

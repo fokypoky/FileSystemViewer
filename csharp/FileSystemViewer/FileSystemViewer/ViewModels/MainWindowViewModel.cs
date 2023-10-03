@@ -16,11 +16,6 @@ namespace FileSystemViewer.ViewModels
 			get => new FileUserControl();
 		}
 
-		public UserControl XmlUserControl
-		{
-			get => new XmlUserControl();
-		}
-
 		public UserControl ZipUserControl
 		{
 			get => new ZipUserControl();

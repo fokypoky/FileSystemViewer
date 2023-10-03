@@ -13,7 +13,51 @@
         <vmodel:ZipUserControlViewModel/>
     </UserControl.DataContext>
     
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <TextBlock Text="ZIP" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                BorderThickness="0.5" BorderBrush="Black"/>
+
+        <StackPanel Grid.Column="0">
+            <Button Content="Создать архив" Command="{Binding CreateZipCommand}"/>
+            <Button Content="Добавить файл" Command="{Binding AddFileCommand}"/>
+            <Button Content="Разархивировать" Command="{Binding UnzipCommand}"/>
+            <Button Content="Удалить файл и архив" Command="{Binding RemoveFileCommand}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Архив: "/>
+                <TextBlock d:Text="C:\\Desktop\\zip" Text="{Binding ZipPath}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Файл: "/>
+                <TextBlock d:Text="C:\\Desktop\\file.txt" Text="{Binding FilePath}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Размер архива: "/>
+                <TextBlock Text="{Binding CompressedFileSize}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Размер файла: "/>
+                <TextBlock Text="{Binding DecompressedFileSize}"/>
+            </StackPanel>
+
+        </StackPanel>
+
     </Grid>
 </UserControl>

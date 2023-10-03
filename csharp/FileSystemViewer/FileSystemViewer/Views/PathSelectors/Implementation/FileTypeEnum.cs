@@ -3,6 +3,8 @@
 	public enum FileType
 	{
 		Xml, 
-		Json
+		Json,
+		Zip,
+		Any
 	}
 }

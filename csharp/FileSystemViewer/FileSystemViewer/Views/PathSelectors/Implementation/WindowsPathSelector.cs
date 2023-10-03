@@ -16,6 +16,10 @@ namespace FileSystemViewer.Views.PathSelectors.Implementation
 						return "JSON (*.json)|*.json";
 					case FileType.Xml:
 						return "XML (*.xml)|*.xml";
+					case FileType.Zip:
+						return "ZIP (*.zip)|*.zip";
+					case FileType.Any:
+						return "Any (*.*)|*.*";
 					default:
 						return "";
 			    }
@@ -44,6 +48,11 @@ namespace FileSystemViewer.Views.PathSelectors.Implementation
 				{
 					return "phonebook.xml";
 				}
+
+				if (FileType == FileType.Zip)
+				{
+					return "phonebook.zip";
+				}
 			}
 
 			return dialog.FileName;
@@ -53,12 +62,18 @@ namespace FileSystemViewer.Views.PathSelectors.Implementation
 		public string GetOpenPath()
 		{
 			var dialog = new OpenFileDialog();
-			dialog.Filter = "JSON (*.json)|*.json|XML (*.xml)|*.xml";
+			dialog.Filter = _filter;
 			dialog.RestoreDirectory = true;
 
 			dialog.ShowDialog();
 
 			return dialog.FileName;
 		}
+
+		public WindowsPathSelector()
+		{
+		}
+
+		public WindowsPathSelector(FileType fileType) => FileType = fileType;
     }
 }
